@@ -11,4 +11,4 @@ print("Entorno listo:", entorno_listo)
 print("Herramientas del módulo:")
 
 for herramienta in herramientas:
-    print("-", herramienta)
+    print("*", herramienta)
