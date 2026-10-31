@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COVID-19 en BOYACA — Tablero</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #f4f6f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #1565C0;
+      color: #fff;
+      padding: 1.5rem 2rem;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 700; }
+    header p  { font-size: 0.9rem; opacity: 0.85; margin-top: 0.25rem; }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .kpi {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      border-left: 5px solid #1565C0;
+    }
+    .kpi .valor  { font-size: 1.9rem; font-weight: 700; color: #1565C0; }
+    .kpi .etiq   { font-size: 0.78rem; color: #555; margin-top: 0.2rem; }
+    .kpi.rojo    { border-left-color: #E53935; }
+    .kpi.rojo .valor { color: #E53935; }
+    .grafico-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .grafico-card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1565C0;
+    }
+    .grafico-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .hallazgo {
+      background: #E3F2FD;
+      border-left: 5px solid #1565C0;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .hallazgo strong { color: #1565C0; }
+    .limites {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.87rem;
+    }
+    .limites h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #555;
+    }
+    .limites ul { padding-left: 1.4rem; color: #444; }
+    .limites li { margin-bottom: 0.4rem; }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      padding: 1.5rem 0 2.5rem;
+    }
+    footer a { color: #1565C0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>COVID-19 en BOYACA — Tablero de seguimiento</h1>
+  <p>Período: 2020-03 – 2024-01 &nbsp;|&nbsp;
+     Fuente: <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data" target="_blank" rel="noopener"
+                style="color:#90CAF9;">Datos Abiertos Colombia</a></p>
+</header>
+
+<main>
+
+  <!-- KPIs -->
+  <section class="kpis" aria-label="Indicadores clave">
+    <div class="kpi">
+      <div class="valor">131,133</div>
+      <div class="etiq">Casos positivos confirmados<br>(total del período)</div>
+    </div>
+    <div class="kpi">
+      <div class="valor">2021-06</div>
+      <div class="etiq">Mes con más notificaciones<br>(22,017 casos)</div>
+    </div>
+    <div class="kpi rojo">
+      <div class="valor">4,011</div>
+      <div class="etiq">Fallecidos registrados<br>(con fecha de muerte)</div>
+    </div>
+    <div class="kpi rojo">
+      <div class="valor">3.06%</div>
+      <div class="etiq">Tasa de letalidad global<br>(fallecidos / casos notificados)</div>
+    </div>
+  </section>
+
+  <!-- Hallazgo principal -->
+  <div class="hallazgo" role="note">
+    <strong>Hallazgo principal:</strong>
+    En BOYACA se registraron <strong>131,133</strong> casos positivos
+    entre 2020-03 y 2024-01.
+    El pico de notificaciones ocurrió en <strong>2021-06</strong> con
+    <strong>22,017</strong> casos en un solo mes.
+    De los 4,011 fallecidos con fecha registrada,
+    la tasa de letalidad global fue de <strong>3.06%</strong>
+    (ver nota de limitaciones sobre posible subestimación).
+  </div>
+
+  <!-- Gráfico 1 -->
+  <div class="grafico-card">
+    <h2>Gráfico 1 — Casos nuevos notificados por mes y evolución acumulada</h2>
+    <img src="graficos/grafico1_casos_mensuales.png"
+         alt="Barras de casos nuevos por mes con línea acumulada superpuesta"
+         loading="lazy" />
+  </div>
+
+  <!-- Gráfico 2 -->
+  <div class="grafico-card">
+    <h2>Gráfico 2 — Distribución de casos por resultado final (por trimestre)</h2>
+    <img src="graficos/grafico2_resultado_trimestral.png"
+         alt="Barras apiladas del resultado de cada caso por trimestre"
+         loading="lazy" />
+  </div>
+
+  <!-- Limitaciones -->
+  <div class="limites">
+    <h2>Limitaciones del análisis</h2>
+    <ul>
+  <li>El CSV es un corte estático; no refleja correcciones o adiciones posteriores a la descarga.</li>
+  <li><strong>Fecha de notificación</strong> es la fecha en que el caso ingresó al sistema,
+      que puede ser posterior al contagio o diagnóstico real.</li>
+  <li>La tasa de letalidad puede estar subestimada: algunas muertes se registran con rezago
+      o en meses posteriores al caso original.</li>
+  <li>El campo <em>Recuperado</em> no distingue entre alta clínica verificada y cierre
+      administrativo por tiempo transcurrido (<em>Tipo de recuperación = Tiempo</em>).</li>
+  <li>834 registros (0,6 %) no tienen <em>Fecha de inicio de síntomas</em>;
+      ese campo no se usa en estos gráficos.</li>
+</ul>
+
+  </div>
+
+</main>
+
+<footer>
+  Datos: <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data" target="_blank" rel="noopener">
+    Casos positivos de COVID-19 en Colombia — Datos Abiertos Colombia
+  </a>.
+  Análisis generado con Python / pandas / matplotlib.
+  No se publican filas individuales ni datos sensibles.
+</footer>
+
+</body>
+</html>

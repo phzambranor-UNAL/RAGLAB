@@ -1,4 +1,4 @@
-# Sesión complementaria | IA responsable en RAG y agentes
+  # Sesión complementaria | IA responsable en RAG y agentes
 
 Es la segunda sesión del curso: en la primera se instaló el entorno y todavía no se ha construido ningún asistente. Aquí se revisa, antes de construirlo, qué puede salir mal en un RAG y en un agente desde la ética, la equidad y la seguridad. Siempre se compara el mismo sistema **sin ajuste** y **con ajuste**. La duración es de **dos horas** e incluye tres laboratorios.
 
