@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstracts AMS Vol. 41 (2020) — Tablero</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6fb; color: #222; line-height: 1.6;
+    }
+    header {
+      background: #0d47a1; color: #fff;
+      padding: 2rem 2.5rem 1.4rem;
+    }
+    header h1 { font-size: 1.65rem; font-weight: 700; margin-bottom: .3rem; }
+    header p  { font-size: .93rem; opacity: .85; }
+    header a  { color: #90caf9; }
+    main { max-width: 1140px; margin: 2rem auto; padding: 0 1.5rem 3rem; }
+    h2 {
+      font-size: 1.15rem; font-weight: 700;
+      margin: 2.2rem 0 .8rem;
+      border-left: 4px solid #0d47a1;
+      padding-left: .7rem; color: #0d47a1;
+    }
+    .cards { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; }
+    .card {
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      padding: 1.1rem 1.3rem; flex: 1 1 160px; text-align: center;
+    }
+    .card .value { font-size: 1.85rem; font-weight: 800; color: #0d47a1; }
+    .card .label { font-size: .81rem; color: #555; margin-top: .15rem; }
+    .table-wrap { overflow-x: auto; margin-top: .4rem; }
+    table {
+      width: 100%; border-collapse: collapse; font-size: .87rem;
+      background: #fff; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+    th {
+      background: #0d47a1; color: #fff;
+      padding: .5rem .75rem; text-align: left; font-weight: 600;
+    }
+    td { padding: .45rem .75rem; border-bottom: 1px solid #e3e8f0; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #e8eaf6; }
+    .badge-covid {
+      background: #e53935; color: #fff; border-radius: 4px;
+      padding: .1rem .4rem; font-size: .75rem; font-weight: 600;
+    }
+    .badge-active {
+      background: #43a047; color: #fff; border-radius: 4px;
+      padding: .1rem .4rem; font-size: .75rem; font-weight: 600;
+    }
+    .finding {
+      background: #e8eaf6; border-left: 5px solid #3949ab;
+      padding: .85rem 1rem; border-radius: 4px;
+      font-size: .93rem; margin-bottom: .75rem;
+      display: flex; gap: .75rem; align-items: flex-start;
+    }
+    .fn {
+      background: #3949ab; color: #fff; border-radius: 50%;
+      width: 1.55rem; height: 1.55rem; display: flex;
+      align-items: center; justify-content: center;
+      font-weight: 700; font-size: .83rem; flex-shrink: 0;
+    }
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 1.4rem; margin-top: .5rem;
+    }
+    figure.chart {
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1); overflow: hidden;
+    }
+    figure.chart img { width: 100%; height: auto; display: block; }
+    figure.chart figcaption {
+      padding: .5rem .85rem; font-size: .8rem;
+      color: #555; border-top: 1px solid #e3e8f0;
+    }
+    .limitations {
+      background: #fff8e1; border-left: 5px solid #f9a825;
+      padding: .9rem 1.1rem; border-radius: 4px;
+    }
+    .limitations ul { padding-left: 1.4rem; }
+    .limitations li { margin-bottom: .4rem; font-size: .88rem; }
+    footer {
+      text-align: center; font-size: .8rem;
+      color: #888; padding: 1.5rem 0 2rem;
+    }
+    footer a { color: #0d47a1; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Abstracts of Papers Presented to the AMS — Vol. 41 (2020)</h1>
+  <p>Análisis de los 9 meetings del volumen 41. Fuente:
+    <a href="https://pubs.ams.org/ABS?active=all" target="_blank" rel="noopener">https://pubs.ams.org/ABS?active=all</a>
+  </p>
+</header>
+<main>
+  <h2>Indicadores</h2>
+  
+    <div class="cards">
+      <div class="card">
+        <div class="value">2,880</div>
+        <div class="label">Abstracts en meetings<br>presentados</div>
+      </div>
+      <div class="card">
+        <div class="value">62</div>
+        <div class="label">Áreas MSC2010 únicas<br>(meetings activos)</div>
+      </div>
+      <div class="card">
+        <div class="value">85.7%</div>
+        <div class="label">Abstracts con institución<br>identificada (activos)</div>
+      </div>
+      <div class="card">
+        <div class="value">3.4%</div>
+        <div class="label">Abstracts en Top-5 inst.<br>(meetings activos)</div>
+      </div>
+      <div class="card">
+        <div class="value">41.0%</div>
+        <div class="label">Abstracts en meetings<br>cancelados (COVID-19)</div>
+      </div>
+    </div>
+
+  <h2>Meetings analizados</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Meeting #</th><th>Nombre</th><th>Lugar</th><th>Fechas</th>
+            <th>Abstracts</th><th>Áreas MSC</th><th>Estado</th></tr>
+      </thead>
+      <tbody><tr><td>1154</td><td>Joint Mathematics Meetings</td><td>Denver, CO</td><td>15–18 ene 2020</td><td>1808</td><td>62</td><td><span class="badge-active">Presentado</span></td></tr>
+<tr><td>1155</td><td>Spring Eastern Sectional</td><td>Charlottesville, VA</td><td>13–15 mar 2020</td><td>603</td><td>—</td><td><span class="badge-covid">Cancelado COVID-19</span></td></tr>
+<tr><td>1156</td><td>Spring Eastern Sectional</td><td>Medford, MA</td><td>21–22 mar 2020</td><td>407</td><td>—</td><td><span class="badge-covid">Cancelado COVID-19</span></td></tr>
+<tr><td>1157</td><td>Spring Central Sectional</td><td>West Lafayette, IN</td><td>4–5 abr 2020</td><td>629</td><td>—</td><td><span class="badge-covid">Cancelado COVID-19</span></td></tr>
+<tr><td>1158</td><td>Spring Western Sectional</td><td>Fresno, CA</td><td>2–3 may 2020</td><td>362</td><td>—</td><td><span class="badge-covid">Cancelado COVID-19</span></td></tr>
+<tr><td>1159</td><td>Fall Central Virtual Sectional</td><td>El Paso, TX (virtual)</td><td>12–13 sep 2020</td><td>204</td><td>34</td><td><span class="badge-active">Presentado</span></td></tr>
+<tr><td>1160</td><td>Fall Eastern Virtual Sectional</td><td>State College, PA (virtual)</td><td>3–4 oct 2020</td><td>345</td><td>33</td><td><span class="badge-active">Presentado</span></td></tr>
+<tr><td>1161</td><td>Fall Southeastern Virtual Sectional</td><td>Chattanooga, TN (virtual)</td><td>10–11 oct 2020</td><td>291</td><td>38</td><td><span class="badge-active">Presentado</span></td></tr>
+<tr><td>1162</td><td>Fall Western Virtual Sectional</td><td>Salt Lake City, UT (virtual)</td><td>24–25 oct 2020</td><td>232</td><td>33</td><td><span class="badge-active">Presentado</span></td></tr></tbody>
+    </table>
+  </div>
+
+  <h2>Hallazgos</h2>
+  <div class="finding"><span class="fn">1</span><strong>Área dominante por tipo de evento.</strong> En la JMM Denver (meeting 1154, presencial), el tema más frecuente fue <em>05 Combinatorics</em> (188 abstracts, 10.4% del meeting). En los cuatro meetings virtuales seccionales post-COVID (1159–1162 agrupados), el área más frecuente fue <em>05 Combinatorics</em> (151 abstracts, 14.1% de esos meetings).</div>
+<div class="finding"><span class="fn">2</span><strong>Institución más activa.</strong> <em>Massachusetts Institute of Technology</em> concentra 20 abstracts de los meetings activos (0.8% del total con institución identificada). El nombre proviene directamente del texto del PDF y no está deduplicado; variantes ortográficas cuentan por separado.</div>
+<div class="finding"><span class="fn">3</span><strong>Estacionalidad de envíos.</strong> El pico de envíos al sistema AMS se concentró en 2019 Jul–Dic (1922 abstracts). Esto refleja los plazos de los meetings: las fechas límite de recepción de los números de primavera e invierno del volumen 41 corresponden al segundo semestre de 2019 y al primer trimestre de 2020.</div>
+<div class="finding"><span class="fn">4</span><strong>Diversidad temática: presencial vs. virtual.</strong> La JMM Denver cubrió 62 áreas MSC2010 distintas, frente a los meetings virtuales (M1159: 34, M1160: 33, M1161: 38, M1162: 33 áreas respectivamente). La menor diversidad de los meetings seccionales es esperable: tienen un alcance geográfico y temático más acotado.</div>
+
+  <h2>Gráficos</h2>
+  <div class="charts-grid"><figure class="chart"><img src="graficos/msc_consolidado.png" alt="Top 25 áreas MSC2010 — Vol. 41 completo" loading="lazy"><figcaption>Los 25 temas más frecuentes de todo el volumen. Azul = meetings presentados; rojo = cancelados por COVID-19.</figcaption></figure>
+<figure class="chart"><img src="graficos/msc_por_meeting.png" alt="Top 10 áreas MSC2010 por meeting" loading="lazy"><figcaption>Los 10 temas más frecuentes en cada uno de los 9 meetings. Barras rojas = meetings cancelados.</figcaption></figure>
+<figure class="chart"><img src="graficos/instituciones.png" alt="Top 20 instituciones del presentador (meetings activos)" loading="lazy"><figcaption>Nombre extraído del PDF o inferido por dominio de email. Sin deduplicación de variantes ortográficas.</figcaption></figure>
+<figure class="chart"><img src="graficos/inst_por_meeting.png" alt="Top-5 instituciones por meeting activo (barras apiladas)" loading="lazy"><figcaption>Las 5 instituciones más frecuentes distribuidas por meeting activo. El resto se agrupa como 'Otras'.</figcaption></figure>
+<figure class="chart"><img src="graficos/msc_apilado.png" alt="Composición temática MSC2010 por meeting activo" loading="lazy"><figcaption>Los 8 códigos MSC más frecuentes apilados por meeting activo.</figcaption></figure>
+<figure class="chart"><img src="graficos/estacionalidad.png" alt="Estacionalidad de envíos — fechas 'Received'" loading="lazy"><figcaption>Número de abstracts por mes de envío al sistema AMS. Refleja la estacionalidad de los plazos de los meetings del vol. 41.</figcaption></figure>
+<figure class="chart"><img src="graficos/diversidad_msc.png" alt="Diversidad temática por meeting activo" loading="lazy"><figcaption>Número de códigos MSC2010 únicos en cada meeting activo.</figcaption></figure>
+<figure class="chart"><img src="graficos/fuente_institucion.png" alt="Fuente de identificación de institución" loading="lazy"><figcaption>Muestra cuántos abstracts obtuvieron su institución desde el texto de la afiliación, desde el dominio del email, o quedaron desconocidos.</figcaption></figure>
+</div>
+
+  <h2>Limitaciones</h2>
+  <div class="limitations">
+    <ul><li>La afiliación extraída corresponde únicamente al <strong>presentador</strong> (autor marcado con *). La afiliación de los co-autores no se puede separar de forma fiable del texto plano.</li>
+<li>El nombre de institución se obtiene por dos vías: (a) limpiando el texto de la afiliación explícita (69.6% de los casos) y (b) consultando una tabla estática de ~160 dominios académicos (16.1% de los casos). El 14.3% de los abstracts queda sin institución identificada. La misma institución puede aparecer con distintas grafías; no se aplica deduplicación.</li>
+<li>Los meetings <strong>1155–1158</strong> aparecen publicados en el volumen 41 pero <strong>no fueron presentados</strong> (cancelados por COVID-19). Se incluyen en los conteos globales con bandera <em>cancelado</em> y se excluyen de los indicadores de meetings activos.</li>
+<li><code>pypdf</code> extrae texto plano. LaTeX, caracteres especiales y saltos de página pueden fragmentar nombres o afiliaciones. 9.8% de los abstracts no tienen email del presentador parseable.</li>
+<li>0.4% de los abstracts no tienen fecha “Received” parseable. La fecha de recepción refleja cuándo se envió el abstract al sistema AMS, no la fecha de presentación.</li>
+<li>El volumen 41 cubre exclusivamente el año 2020. Los resultados no son comparables con otros volúmenes sin normalizar por número de meetings.</li></ul>
+  </div>
+</main>
+<footer>
+  <p>Generado con <code>analisis.py</code> ·
+     Datos: <a href="https://pubs.ams.org/ABS?active=all" target="_blank" rel="noopener">pubs.ams.org/ABS</a> ·
+     No se publican filas individuales</p>
+</footer>
+</body>
+</html>
